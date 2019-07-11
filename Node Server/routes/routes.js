@@ -15,4 +15,13 @@ router.delete('/api/donors/:fname/:lname', workshopController.deleteDonor);
 
 router.get('/api/qdonors',workshopController.queryDonors);
 
+
+////////////////////////////////////////////////////////////////////////
+
+router.post('/api/register/donor', workshopController.donorRegistration);
+
+router.post('/api/register/hospital', workshopController.hospitalRegistration);
+
+router.post('/api/login', workshopController.loginAuth);
+
 module.exports = router;
