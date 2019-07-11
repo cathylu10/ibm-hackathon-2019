@@ -1,0 +1,13 @@
+#server ignore files
+/Node\ Server/package-lock.json
+/Node\ Server/node_modules/
+/Node\ Server/.DS_Store
+/Node\ Server/TestScripts
+/Node\ Server/.env
+/Node\ Server/.env.enc
+/Node\ Server/vcap-local.json
+/Node\ Server/controllers/.DS_Store
+/Node\ Server/.cfignore
+
+
+.DS_Store

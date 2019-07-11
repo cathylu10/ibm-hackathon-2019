@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="hospital_signup_styles.css">
+</head>
+<body>
+
+<h3>Hospital Sign Up</h3>
+
+<div class="container">
+  <form action="/api/hospitalsignup">
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email" placeholder="">
+
+    <label for="password">Password</label>
+    <input type="text" id="password" name="password" placeholder="">
+
+    <label for="hname">Hospital Name</label>
+    <input type="text" id="hname" name="hospitalname" placeholder="">
+
+    <label for="pnumber">Hospital Phone Number</label>
+    <input type="text" id="pname" name="phonenumber" placeholder="xxx-xxx-xxxx">
+
+    <label for="saddr">Street Address</label>
+    <input type="text" id="sa" name="streetaddress" placeholder="">
+    <label for="saddr2">Street Address Line 2</label>
+    <input type="text" id="sa2" name="streetaddress2" placeholder="">
+
+    <label for="city">City</label>
+    <input type="text" id="city" name="city" placeholder="">
+
+    <label for="state/province">State/Province</label>
+    <input type="text" id="state" name="state/province" placeholder="">
+
+    <label for="post">Postal/Zip Code</label>
+    <input type="text" id="post" name="postal/zip code" placeholder="">
+
+    <label for="country">Country</label>
+    <select id="country" name="country">
+      <option value="australia">Australia</option>
+      <option value="canada">Canada</option>
+      <option value="usa">USA</option>
+    </select>
+
+    <!-- <label for="subject">Subject</label>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea> -->
+
+    <input type="submit" value="Submit">
+  </form>
+</div>
+
+</body>
+</html>
