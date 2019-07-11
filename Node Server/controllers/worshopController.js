@@ -85,13 +85,12 @@ function findDonor(db, donorfname,donorlname) {
 }
 
 //check existing entry
-function checkExistingDonor(db, donorfname,donorlname) {
+function checkExistingDonor(db, iemail) {
     return new Promise(function(resolve,reject){
 
         let options = {
               selector: {
-                  firstName: { "$eq": donorfname },
-                  lastName: { "eq": donorlname }
+                  email: { "$eq": iemail }
               },
               fields: [ "_id" ],
               limit:1
@@ -433,14 +432,16 @@ function uD() {
         //pull correct keys from DB
         approve.get("donorProfileFormat")
             .then((keys)=>{
-
+                //console.log("Keys are:",keys);
                 templateKeys = [];
-                for (it in templateKeys) {
+                for (it in keys) {
+
                     if ((it != "_id" && it != "_rev")) {
-                        templateKeys.push[it];
+                        //console.log("pushed:",it);
+                        templateKeys.push(it);
                     }
                 }
-
+                //console.log("template keys are:", templateKeys);
                 resolve(templateKeys);
 
             })
@@ -456,6 +457,7 @@ function uD() {
 function uD1(templateKeys,body) {
     return new Promise((resolve,reject)=>{
         //make sure it has correct keys
+        //console.log("checking if:", body, " has ",templateKeys);
         checkContains(body,templateKeys)
             .then((result) => {
                 resolve();
@@ -499,7 +501,7 @@ function uD2(body) {
 function uD4(body) {
     return new Promise((resolve,reject)=>{
     //check if conf already exists
-        return checkExistingDonor(DDB,body["firstName"],body["lastName"])
+        return checkExistingDonor(DDB,body["email"])
             .then((result1) => {
                 resolve();
 
@@ -680,3 +682,200 @@ exports.queryDonors = function (req, res) {
 
             
 }
+
+///////////////////////////////////////////////////////////////////////////////
+//start hospitalRegistration
+
+function hD() {
+    return new Promise((resolve,reject)=>{
+        //pull correct keys from DB
+        approve.get("hospitalProfileFormat")
+            .then((keys)=>{
+
+                templateKeys = [];
+                for (it in keys) {
+                    if ((it != "_id" && it != "_rev")) {
+                        templateKeys.push(it);
+                    }
+                }
+
+
+                resolve(templateKeys);
+
+            })
+            .catch((err)=>{
+                console.log("Could not Retrieve keys for formating!");
+                reject("Could not get required keys for formatting!"+err);
+               
+            });
+    });
+}
+
+async function hRdriver(body) {
+    try {
+        let tbody = await uDT(body); //translates to propper keys
+        let res = await hD(tbody);//gets correct keys from database for template
+        let res2 = await uD1(res,tbody);//checks if form follows propper template
+        res = await uD2(tbody);//checks types of data
+        //add in tag if needed
+
+        tbody["classification"] = "hospital";
+
+        res = await uD4(tbody);//check if entry already exists
+        res = await uD5(tbody);//insert into CDB database
+        return true;
+    } catch(e){
+        return(e)
+    }
+}
+
+function hRfinal(body) {
+    return new Promise((resolve, reject) => {
+        resolve(hRdriver(body));
+    });
+}
+
+
+
+exports.hospitalRegistration = function (req, res) {
+    hRfinal(req.body)
+        .then((response) => {
+            if (response != true) {
+                res.json({
+                    "error":response
+                });
+                res.end();
+            } else {
+                res.json({
+                    "sucess":response
+                });
+                res.end;
+            }
+        })
+
+}
+
+//end hospital registration
+///////////////////////////////////////////////////////////////////////////////
+//start donor Regestration
+
+
+async function dRdriver(body) {
+    try {
+        let tbody = await uDT(body); //translates to propper keys
+        let res = await uD(tbody);//gets correct keys from database for template
+        let res2 = await uD1(res,tbody);//checks if form follows propper template
+        res = await uD2(tbody);//checks types of data
+        //add in tag if needed
+
+        tbody["classification"] = "donor";
+
+        res = await uD4(tbody);//check if entry already exists
+        res = await uD5(tbody);//insert into CDB database
+        return true;
+    } catch(e){
+        return(e)
+    }
+}
+
+function dRfinal(body) {
+    return new Promise((resolve, reject) => {
+        resolve(dRdriver(body));
+    });
+}
+
+exports.donorRegistration = function (req, res) {
+
+   
+    dRfinal(req.body)
+        .then((response) => {
+            if (response != true) {
+                res.json({
+                    "error":response
+                });
+                res.end();
+            } else {
+                res.json({
+                    "sucess":response
+                });
+                res.end;
+            }
+        })
+
+    
+}
+//end donor registration
+///////////////////////////////////////////////////////////////////////////////
+//start login authentication
+
+function authMatch(db, iemail,ipass) {
+    return new Promise(function(resolve,reject){
+
+        let options = {
+              selector: {
+                  email: { "$eq": iemail },
+                  password: { "$eq": ipass}
+              },
+              fields: [ "_id" ],
+              limit:1
+            };
+
+
+        db.find(options).then((body) => {
+            if (body.docs.length !=0) {
+                resolve(body.docs[0]["_id"]);
+            } else {
+                reject(false);
+            }
+
+        }).catch((err) => {
+            resolve("Could not run Find!");
+        })
+
+    });
+}
+
+exports.loginAuth = function (req, res) {
+    //given email and pass match with database
+    //send sucess or reject
+
+    translateBackend(req.body)
+        .then((body)=>{
+
+            checkContains(body,["email","password"])
+                .then(()=>{
+
+                    authMatch(DDB,body["email"],body["password"])
+                        .then((result) => {
+                            res.json({
+                                "success":result
+                            })
+                            res.end();
+                        })
+                        .catch((err) => {
+                            res.json({
+                                "error":"Could not find match!"+err
+                            })
+                            res.end();
+                        })
+
+                })
+                .catch((err)=>{
+                    res.json({
+                        "error":"does not contain propper keys!"
+                    })
+                    res.end();
+                });
+
+        })
+        .catch((err)=>{
+            res.json({
+                "error":err
+            });
+            res.end();
+        });
+
+}
+
+//end login authentication
+///////////////////////////////////////////////////////////////////////////////
