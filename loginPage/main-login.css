@@ -6,6 +6,10 @@ body.signin-body {
     margin-top: 8%;
 }
 
+.container.dOrH-container {
+    margin-top:18%;
+}
+
 .card.signin-card {
     padding: 40x 0px 20px;
     background-color: #FCFCFC;
@@ -23,6 +27,13 @@ img.signin-img {
     display: block;
 }
 
+img.icon-img {
+    padding: 0 0 0; 
+    width: 25%;
+    margin: auto;
+    display: block;
+}
+
 label.member-login {
     font-size: 1.8rem;
     color: dimgray;
@@ -30,6 +41,14 @@ label.member-login {
     display: block;
     font-family: serif;
     margin-bottom: 2rem;
+}
+
+label.dOrH {
+    font-size: 3.5rem;
+    color: black;
+    margin: auto;
+    display: block;
+    font-family: serif;
 }
 
 form.signin-form {
