@@ -1,5 +1,7 @@
 ﻿var express = require('express');
 var router = express.Router();
+var bodyParser = require('body-parser');
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var workshopController = require("../controllers/worshopController");
 
@@ -18,10 +20,10 @@ router.get('/api/qdonors',workshopController.queryDonors);
 
 ////////////////////////////////////////////////////////////////////////
 
-router.post('/api/register/donor', workshopController.donorRegistration);
+router.post('/api/register/donor',urlencodedParser, workshopController.donorRegistration);
 
-router.post('/api/register/hospital', workshopController.hospitalRegistration);
+router.post('/api/register/hospital',urlencodedParser, workshopController.hospitalRegistration);
 
-router.post('/api/login', workshopController.loginAuth);
+router.post('/api/login', urlencodedParser, workshopController.loginAuth);
 
 module.exports = router;

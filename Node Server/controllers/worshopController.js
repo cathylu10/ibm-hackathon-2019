@@ -4,6 +4,7 @@ var validUrl = require('valid-url');
 var Cloudant = require('@cloudant/cloudant');
 let secureEnv = require('secure-env');
 
+
 if (process.env.hasOwnProperty("SECRET")) {
     global.env = secureEnv({secret:process.env.SECRET});
     var uRL = global.env.URL
@@ -32,7 +33,7 @@ function checkContains(dict,arr) {
     return pms = new Promise(function (resolve, reject) {
         for (let i = 0; i < arr.length; i++) {
             if (dict.hasOwnProperty(arr[i]) == false) {
-                reject("found bad id!");
+                reject("found bad id! :" + arr[i]);
             }
         }
         resolve("Sucess!");
@@ -784,7 +785,7 @@ function dRfinal(body) {
     });
 }
 
-exports.donorRegistration = function (req, res) {
+exports.donorRegistration = function ( req, res) {
 
    
     dRfinal(req.body)
