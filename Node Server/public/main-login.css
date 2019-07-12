@@ -1,5 +1,8 @@
 body.signin-body {
     background-color: #FFF2FF;
+    background-image: url(assets/backgroundpic.png);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .container.signin-container {
@@ -11,13 +14,14 @@ body.signin-body {
 }
 
 .card.signin-card {
-    padding: 40x 0px 20px;
+    
     background-color: #FCFCFC;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
     -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
     -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
     margin: auto;
     text-align: center;
+    width: 80%
 }
 
 img.signin-img {
