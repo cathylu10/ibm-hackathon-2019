@@ -458,7 +458,7 @@ function uD() {
 function uD1(templateKeys,body) {
     return new Promise((resolve,reject)=>{
         //make sure it has correct keys
-        //console.log("checking if:", body, " has ",templateKeys);
+        console.log("checking if:", body, " has ",templateKeys);
         checkContains(body,templateKeys)
             .then((result) => {
                 resolve();
@@ -797,7 +797,7 @@ exports.donorRegistration = function ( req, res) {
                 res.end();
             } else {
                 res.json({
-                    "sucess":response
+                    "success":response
                 });
                 res.end;
             }
