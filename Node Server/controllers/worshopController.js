@@ -748,7 +748,7 @@ exports.hospitalRegistration = function (req, res) {
                 res.end();
             } else {
                 res.json({
-                    "sucess":response
+                    "success":response
                 });
                 res.end;
             }
