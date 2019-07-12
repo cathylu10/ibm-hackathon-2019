@@ -2,6 +2,7 @@ function sendDonorForm() {
     var url = "https://ebd.mybluemix.net/api/register/donor";
     var formElement = document.querySelector("form");
     var request = new XMLHttpRequest();
+    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
