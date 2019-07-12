@@ -31,3 +31,4 @@ function sendHospitalForm() {
     request.open("POST", url);
     request.send(new FormData(formElement));
 };
+
