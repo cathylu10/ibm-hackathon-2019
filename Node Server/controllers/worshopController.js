@@ -458,7 +458,7 @@ function uD() {
 function uD1(templateKeys,body) {
     return new Promise((resolve,reject)=>{
         //make sure it has correct keys
-        //console.log("checking if:", body, " has ",templateKeys);
+        console.log("checking if:", body, " has ",templateKeys);
         checkContains(body,templateKeys)
             .then((result) => {
                 resolve();
@@ -786,7 +786,7 @@ function dRfinal(body) {
 }
 
 exports.donorRegistration = function ( req, res) {
-
+    //console.log("Res is:", res);
    
     dRfinal(req.body)
         .then((response) => {
@@ -797,7 +797,7 @@ exports.donorRegistration = function ( req, res) {
                 res.end();
             } else {
                 res.json({
-                    "sucess":response
+                    "success":response
                 });
                 res.end;
             }
@@ -856,7 +856,7 @@ exports.loginAuth = function (req, res) {
                         .catch((err) => {
                             res.json({
                                 "error":"Could not find match!"+err
-                            })
+                            });
                             res.end();
                         })
 
@@ -880,3 +880,25 @@ exports.loginAuth = function (req, res) {
 
 //end login authentication
 ///////////////////////////////////////////////////////////////////////////////
+
+
+//start get id
+
+exports.getDonorId = function (req, res) {
+
+    DDB.get(req.params.id)
+        .then((body) => {
+            res.json(body);
+            res.end();
+        })
+        .catch((err) => {
+            res.json({
+                "error":err
+            });
+            res.end();
+        })
+
+
+
+
+}
