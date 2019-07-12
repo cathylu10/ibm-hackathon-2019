@@ -1,9 +1,52 @@
+body {
+    background-image: url(assets/bloodDonation.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card.about-card {
+    padding: 0px 0px 0px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    
+    color: #404040;
+    margin: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    display: block;
+    font-family: serif;
+    text-align: center
+}
+
+label.title {
+    font-size: 4rem;
+}
+
+label.description {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+
+
+
+
+
+
+
+
 body.dashboard-body {
     background-color: #FFF2FF;
 }
 
 .container-fluid.dashboard-container {
     margin-top: 2%;
+}
+
+.card {
+    opacity: 0.75;
 }
 
 
@@ -38,13 +81,13 @@ label.name {
 /*left side stuff*/
 img.icon-img {
     padding: 0 0 0; 
-    width: 90%;
+    width: 60%;
     margin: auto;
+    margin-bottom: 50%;
     display: block;
 }
 
 .nav-pills {
-    margin-top: 70%;
     display:block;
 }
 /*
@@ -74,23 +117,25 @@ img.icon-img {
 }
 
 .container.none-text-container {
-    font-size: 2rem;
+    font-size: 1.4rem;
     color: dimgray;
     margin: auto;
     text-align: center;
     display: block;
     font-family: serif;
     width: 60%
+
 }
 
 /* middle stuff hospital */
 .container.send-request-container {
     color: dimgray;
     margin: auto;
+    margin-top: 5rem;
     text-align: center;
     display: block;
     font-family: serif;
-    width: 60%
+    width: 80%
 }
 
 label.send-text {
@@ -99,7 +144,7 @@ label.send-text {
 
 label.name-text {
     font-size: 1.4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 form.send-request-form {
@@ -111,55 +156,6 @@ form.send-request-form {
 select.time-select{
     margin: auto;
     display: block;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-
-
-
-
-
-
-
-label.member-login {
-    font-size: 1.8rem;
-    color: dimgray;
-    margin: auto;
-    display: block;
-    font-family: serif;
-    margin-bottom: 2rem;
-}
-
-label.dOrH {
-    font-size: 3.5rem;
-    color: black;
-    margin: auto;
-    display: block;
-    font-family: serif;
-}
-
-form.signin-form {
-    max-width: 350px;
-    margin: auto;
-}
-
-form.signin-form.form-control {
-    background-color: #FAFAFA;
-}
-
-button.signin-btn {
-    color: #FFFFFF;
-    background-color:  #FF0440;
-    margin: auto;
-    margin-bottom: 0.5rem;
-    display: block;
-    width: 66%;
-}
-
-a.create-new-account {
-    font-size: 1.2rem;
-    text-align: center;
-    display: block;
-    margin-top: 15px;
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
 }
