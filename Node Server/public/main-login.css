@@ -1,0 +1,77 @@
+body.signin-body {
+    background-color: #FFF2FF;
+}
+
+.container.signin-container {
+    margin-top: 8%;
+}
+
+.container.dOrH-container {
+    margin-top:18%;
+}
+
+.card.signin-card {
+    padding: 40x 0px 20px;
+    background-color: #FCFCFC;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    margin: auto;
+    text-align: center;
+}
+
+img.signin-img {
+    padding: 0 2rem 0.5rem; 
+    width: 70%;
+    margin: auto;
+    display: block;
+}
+
+img.icon-img {
+    padding: 0 0 0; 
+    width: 25%;
+    margin: auto;
+    display: block;
+}
+
+label.member-login {
+    font-size: 1.8rem;
+    color: dimgray;
+    margin: auto;
+    display: block;
+    font-family: serif;
+    margin-bottom: 2rem;
+}
+
+label.dOrH {
+    font-size: 3.5rem;
+    color: black;
+    margin: auto;
+    display: block;
+    font-family: serif;
+}
+
+form.signin-form {
+    max-width: 350px;
+    margin: auto;
+}
+
+form.signin-form.form-control {
+    background-color: #FAFAFA;
+}
+
+button.signin-btn {
+    color: #FFFFFF;
+    background-color:  #FF0440;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 66%;
+}
+
+a.create-new-account {
+    font-size: 1.2rem;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+}
