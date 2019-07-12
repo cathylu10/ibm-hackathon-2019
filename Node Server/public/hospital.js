@@ -11,12 +11,11 @@ function sendDonorForm() {
         }
     }
     request.open("POST", url);
-    request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded")
     request.send(new FormData(formElement));
 };
 
 function goToDash(response) {
-    if (response.success == "true") {
+    if (response.success) {
         window.location.href = "https://ebd.mybluemix.net/dashboard";
     }
 };
