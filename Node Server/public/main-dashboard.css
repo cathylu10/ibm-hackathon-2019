@@ -1,0 +1,165 @@
+body.dashboard-body {
+    background-color: #FFF2FF;
+}
+
+.container-fluid.dashboard-container {
+    margin-top: 2%;
+}
+
+
+/*right side stuff*/
+
+.card.profile-card {
+    padding: 0px 0px 0px;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+}
+
+label.profile {
+    font-size: 2rem;
+    color: dimgray;
+    margin: auto;
+    display: block;
+    font-family: serif;
+    margin-bottom: 2rem;
+}
+
+label.name {
+    font-size: 1rem;
+    color: dimgray;
+    display: block;
+    font-family: serif;
+    margin-bottom: 1.5rem
+}
+
+
+/*left side stuff*/
+img.icon-img {
+    padding: 0 0 0; 
+    width: 90%;
+    margin: auto;
+    display: block;
+}
+
+.nav-pills {
+    margin-top: 70%;
+    display:block;
+}
+/*
+.nav-pills.nav-link.active {
+    color: red;
+}
+*/
+
+
+
+/* middle stuff user*/
+.container.hospitals-near-container {
+    font-size: 3rem;
+    color: dimgray;
+    margin: auto;
+    display: block;
+    font-family: serif;
+    margin-bottom: 5rem;
+    text-align: center
+}
+
+.container.list-hospitals-container {
+    color: dimgray;
+    margin: auto;
+    display: block;
+    margin-bottom: 5rem;
+}
+
+.container.none-text-container {
+    font-size: 2rem;
+    color: dimgray;
+    margin: auto;
+    text-align: center;
+    display: block;
+    font-family: serif;
+    width: 60%
+}
+
+/* middle stuff hospital */
+.container.send-request-container {
+    color: dimgray;
+    margin: auto;
+    text-align: center;
+    display: block;
+    font-family: serif;
+    width: 60%
+}
+
+label.send-text {
+    font-size: 2rem;
+}
+
+label.name-text {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+form.send-request-form {
+    margin: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+select.time-select{
+    margin: auto;
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+
+
+
+
+
+label.member-login {
+    font-size: 1.8rem;
+    color: dimgray;
+    margin: auto;
+    display: block;
+    font-family: serif;
+    margin-bottom: 2rem;
+}
+
+label.dOrH {
+    font-size: 3.5rem;
+    color: black;
+    margin: auto;
+    display: block;
+    font-family: serif;
+}
+
+form.signin-form {
+    max-width: 350px;
+    margin: auto;
+}
+
+form.signin-form.form-control {
+    background-color: #FAFAFA;
+}
+
+button.signin-btn {
+    color: #FFFFFF;
+    background-color:  #FF0440;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 66%;
+}
+
+a.create-new-account {
+    font-size: 1.2rem;
+    text-align: center;
+    display: block;
+    margin-top: 15px;
+}
