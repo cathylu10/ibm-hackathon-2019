@@ -37,11 +37,66 @@
         <div class="col"></div>
         
         <div class="col-sm-6">
-          
+          <div class="container send-request-container">
+            <div class="card send-request-card">
+              <div class="card-body">
+                <label class="send-text" for="gridCheck">Send a need request for:</label>
+                <label class="name-text" for="gridCheck">Dell Seton Medical Center</label>
+                
+                  
+                <form class=send-request-form action="/" method="POST">
+                    
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="ab+" value="ab+">
+                    <label class="form-check-label" for="ab+">AB+</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="a+" value="a+">
+                    <label class="form-check-label" for="b+">A+</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="b+" value="b+" >
+                    <label class="form-check-label" for="b+">B+</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="o+" value="o+">
+                    <label class="form-check-label" for="o+">O+</label>
+                  </div>
+                    
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="ab-" value="ab-">
+                    <label class="form-check-label" for="ab-">AB-</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="a-" value="a-">
+                    <label class="form-check-label" for="a-">A-</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="b-" value="b-" >
+                    <label class="form-check-label" for="b-">B-</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="o-" value="o-">
+                    <label class="form-check-label" for="o-">O-</label>
+                  </div>
+            
+                  <select class="time-select">
+                    <option selected>Select urgency time</option>
+                    <option value="1">15 minutes</option>
+                    <option value="2">30 minutes</option>
+                    <option value="3">1 hour</option>
+                    <option value="4">2 hour</option>
+                  </select>
+                    
+                  <button type="submit" class="btn btn-primary">Notify Donors</button>
+                </form> 
+            
+              </div>
+            </div>
+          </div>
          
         
-            
-           
+             
             
         </div>
         <div class="col"></div>
@@ -50,9 +105,10 @@
           <div class="container profile-container">
             <div class="card profile-card">
               <div class="card-body">
-                <label class="profile" for="gridCheck">Profile</label>
-                <label class="name" for="gridCheck">Deepthi Pittala: 19</label>
-                <label class="name" for="gridCheck">Blood Type: B+</label>
+                <label class="profile" for="gridCheck">Hospital Profile</label>
+                <label class="name" for="gridCheck">Dell Seton Medical Center</label>
+                <label class="name" for="gridCheck">Address: <a href="https://www.google.com/maps/place/Dell+Seton+Medical+Center+at+The+University+of+Texas/@30.2762538,-97.7363345,17z/data=!3m1!4b1!4m5!3m4!1s0x8644b5a27ba55557:0x106309e430c2c7ce!8m2!3d30.2762538!4d-97.7341458">1500 Red River St, Austin, TX 78701</a></label>
+                <img src="assets/hospital-icon.png" class="img-fluid icon-img">
               </div>
             </div>
           </div>

@@ -55,9 +55,9 @@ img.icon-img {
 
 
 
-/* middle stuff */
+/* middle stuff user*/
 .container.hospitals-near-container {
-    font-size: 4rem;
+    font-size: 3rem;
     color: dimgray;
     margin: auto;
     display: block;
@@ -82,6 +82,44 @@ img.icon-img {
     font-family: serif;
     width: 60%
 }
+
+/* middle stuff hospital */
+.container.send-request-container {
+    color: dimgray;
+    margin: auto;
+    text-align: center;
+    display: block;
+    font-family: serif;
+    width: 60%
+}
+
+label.send-text {
+    font-size: 2rem;
+}
+
+label.name-text {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+form.send-request-form {
+    margin: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+select.time-select{
+    margin: auto;
+    display: block;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+
+
+
+
+
 
 
 label.member-login {
