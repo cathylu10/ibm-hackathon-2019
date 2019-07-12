@@ -6,6 +6,8 @@ function sendDonorForm() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
             goToDash(response);
+        } else if (this.readyState == 4 && this.status != 200) {
+            alert("unable to register donor");
         }
     }
     request.open("POST", url);
@@ -26,6 +28,8 @@ function sendHospitalForm() {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
             goToDash(response);
+        } else if (this.readyState == 4 && this.status != 200) {
+            alert("unable to register hospital");
         }
     }
     request.open("POST", url);
