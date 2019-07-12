@@ -33,13 +33,13 @@ function sendHospitalForm() {
 function goToDonorDash(response) {
     if (response.success) {
         window.location.href = "https://ebd.mybluemix.net/donor-dash.html";
-    }
+    } 
 };
 
 function goToHospitalDash(response) {
     if (response.success) {
         window.location.href = "https://ebd.mybluemix.net/hosp-dash.html";
-    }
+    } 
 };
 
 function login() {
@@ -51,7 +51,7 @@ function login() {
             var response = JSON.parse(this.responseText);
             dashFromLogin(response);
         } else if (this.readyState == 4 && this.status != 200) {
-            alert("unable to log in! code:"+this.status);
+            alert("unable to log in");
         }
     }
     request.open("POST", url);
@@ -63,7 +63,7 @@ function dashFromLogin(response) {
         var url = "https://ebd.mybluemix.net/api/donors/" + response.success;
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
-            if (this.readyState == 4 && this.status == 200){
+            if (this.readyState == 4 && this.status == 200) {
                 var resp = JSON.parse(this.responseText);
                 if (resp.classification == "hospital") {
                     window.location.href = "https://ebd.mybluemix.net/hosp-dash.html";
@@ -78,3 +78,5 @@ function dashFromLogin(response) {
         request.send();
     }
 }
+
+
