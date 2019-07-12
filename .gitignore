@@ -10,4 +10,4 @@
 /Node\ Server/.cfignore
 
 
-.DS_Store
+*.DS_Store
