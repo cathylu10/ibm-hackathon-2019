@@ -64,8 +64,8 @@ function dashFromLogin(response) {
         var request = new XMLHttpRequest();
         request.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var response = JSON.parse(this.responseText);
-                if (response.classification == "hospital") {
+                var resp = JSON.parse(this.responseText);
+                if (resp.classification == "hospital") {
                     window.location.href = "https://ebd.mybluemix.net/hosp-dash.html";
                 } else {
                     window.location.href = "https://ebd.mybluemix.net/donor-dash.html";
