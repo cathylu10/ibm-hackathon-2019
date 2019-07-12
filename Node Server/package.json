@@ -1,0 +1,28 @@
+{
+  "name": "EBD",
+  "version": "1.0.0",
+  "description": "Emergency blood donors application",
+  "main": "Server.js",
+  "engines": {
+    "node": "10.*"
+  },
+  "scripts": {
+    "test": "nodemon Server.js --exec babel-node --",
+    "start": "nodemon Server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@cloudant/cloudant": "^4.1.1",
+    "babel-cli": "^6.26.0",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "moment": "^2.24.0",
+    "nano": "^8.1.0",
+    "nodemon": "^1.19.1",
+    "request": "^2.88.0",
+    "secure-env": "^1.0.0",
+    "valid-url": "^1.0.9"
+  }
+}
