@@ -5,7 +5,7 @@ function sendDonorForm() {
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
-            goToDash(response);
+            goToDonorDash(response);
         } else if (this.readyState == 4 && this.status != 200) {
             alert("unable to register donor");
         }
@@ -21,7 +21,7 @@ function sendHospitalForm() {
     request.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             var response = JSON.parse(this.responseText);
-            goToDash(response);
+            goToHospitalDash(response);
         } else if (this.readyState == 4 && this.status != 200) {
             alert("unable to register hospital");
         }
@@ -30,9 +30,15 @@ function sendHospitalForm() {
     request.send(new FormData(formElement));
 };
 
-function goToDash(response) {
+function goToDonorDash(response) {
     if (response.success) {
-        window.location.href = "https://ebd.mybluemix.net/dashboard";
+        window.location.href = "https://ebd.mybluemix.net/donor-dash.html";
+    } 
+};
+
+function goToHospitalDash(response) {
+    if (response.success) {
+        window.location.href = "https://ebd.mybluemix.net/hosp-dash.html";
     } 
 };
 
@@ -54,7 +60,22 @@ function login() {
 
 function dashFromLogin(response) {
     if (response.success != null && response.success !== undefined) {
-        window.location.href = "https://ebd.mybluemix.net/dashboard";
+        var url = "https://ebd.mybluemix.net/api/donors/" + response.success;
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var response = JSON.parse(this.responseText);
+                if (response.classification == "hospital") {
+                    window.location.href = "https://ebd.mybluemix.net/hosp-dash.html";
+                } else {
+                    window.location.href = "https://ebd.mybluemix.net/donor-dash.html";
+                }
+            } else if (this.readyState == 4 && this.status != 200) {
+                alert("unable to go to dash");
+            }
+        }
+        request.open("GET", url);
+        request.send();
     }
 }
 
