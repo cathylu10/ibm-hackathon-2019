@@ -1,0 +1,13 @@
+{
+  "_id": "hospitalProfileFormat",
+  "_rev": "3-a6ce235ffce5e1ef1fd6297916468bd3",
+  "email": "",
+  "password": "",
+  "hospitalName": "",
+  "phoneNumber": "",
+  "street1": "",
+  "city": "",
+  "state": "",
+  "zipCode": "",
+  "country": ""
+}

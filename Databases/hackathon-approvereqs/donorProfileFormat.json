@@ -1,0 +1,14 @@
+{
+  "_id": "donorProfileFormat",
+  "_rev": "10-14b9fa4e83bbe70cc5745abd8392a989",
+  "firstName": "",
+  "lastName": "",
+  "email": "",
+  "password": "",
+  "street1": "",
+  "city": "",
+  "state": "",
+  "zipCode": "",
+  "country": "",
+  "phoneNumber": ""
+}
