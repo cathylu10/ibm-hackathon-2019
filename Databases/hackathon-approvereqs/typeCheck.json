@@ -1,0 +1,17 @@
+{
+  "_id": "typeCheck",
+  "_rev": "8-1a982bc27267743b77074451f0277bb8",
+  "phoneNumber": "string",
+  "firstName": "string",
+  "lastName": "string",
+  "email": "string",
+  "password": "string",
+  "classification": "string",
+  "street1": "string",
+  "street2": "string",
+  "city": "string",
+  "state": "string",
+  "zipCode": "string",
+  "country": "string",
+  "bloodType": "string"
+}

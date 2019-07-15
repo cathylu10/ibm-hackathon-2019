@@ -1,0 +1,10 @@
+{
+  "_id": "_design/donorFeatures",
+  "_rev": "3-ef72d724a951dd219ad911ec84136d74",
+  "views": {
+    "donorInfo": {
+      "map": "function (doc) {\n  emit(doc._id, {\n    \"firstName\":doc.firstName,\n    \"lastName\":doc.lastName,\n    \"phoneNumber\":doc.phone,\n    \"bloodtype\":doc.bloodType\n  });\n}"
+    }
+  },
+  "language": "javascript"
+}
